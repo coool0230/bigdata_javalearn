@@ -59,6 +59,118 @@ StringBuffer
 	4.线程是安全的
 	
 	
+StringBuilder
+-----------------------------------------------
+	1.字符串构建器
+	2.mutable,可变的
+	3.java.lang.AbstractStringBuilder
+				java.lang.StringBuilder继承自上面
+	4.不是线程安全的
+	
+	
+builder模式
+------------------------------------------
+	1.java设计模式之一
+	
+基本类型与包装类的区别
+--------------------------------------------
+	1.基本类型(数值类型)有默认值0
+	2.包装类默认值为null(成员变量时)
+	3.基本类型无法表达null的概念
+	4.基本类型不是对象
+	5.包装类是对象
+	6.基本类型可以直接参与运算
+		int i = 7,j = 8; c = i + j;
+	7.包装类是对象,不能直接参与运算
+		Integer i0 = new Integer(13);
+		Integer i1 = new Integer(12);
+		c =  i0.intValue + i1.intValue
+	
+自动装箱
+---------------------------
+	将基本类型自动转换成包装类对象
+	
+
+自动拆箱
+---------------------------------
+	将包装类对象自动转换成基本类型
+	
+数组
+-------------------------------
+	1.元素类型必须相同
+		基本类型和引用类型
+	2.长度固定
+	3.地址连续
+	4.通过下标(索引)访问,以0 为基址
+	5.null指针异常/索引越界异常
+	6.数组只有属性,没有方法
+	7.数组理想情况下 最大值 2的31次方 -1;
+	
+	
+集合
+---------------------------------------
+	1.容器
+	2.最大好处长度可变
+	3.集合只能存放对象
+	4.元素类型可以不同
+	5.只有方法
+
+List
+-------------------------------------
+	interface java.lang.Iterable
+			/|\
+			 |
+			interface java.util.Collection
+						/|\
+						 |
+						interface java.util.List
+									/|\
+									-------实现-----
+									class  java.util.ArrayList
+	2.list可以存放重复元素
+	3.有序的
+	4.ArrayList
+		读取快
+		写入慢 
+		list.add();
+		list.remove()
+		list.size()
+		list.clear()
+		list.get()
+		list.contains()
+		list.isEmpty();
+		list.indexOf();//  元素的索引
+		list.lastIndexOf();   元素最后一次出现在列表中的位置
+	
+Set
+-----------------------------------------------------
+		interface java.lang.Iterable
+			/|\
+			 |
+			interface java.util.Collection
+						/|\
+						 |
+						interface java.util.Set
+						
+	2.元素不能重复
+	3.元素的存储是无序的
+
+	
+	
+	
+java基本类型
+---------------------------------------
+	0.包装类,warpper
+		
+	1.数字类型
+		byte				Byte
+		short				Short
+		int					Integer
+		long				Long
+		float				Float
+		double			Double
+	2.boolean			Boolean
+	3.char				Character
 	
 	
 作业
@@ -70,3 +182,5 @@ StringBuffer
 	2.取出整数的8进制表示形式
 	3.使用韩语字符集实现字符串编解码实验
 	4.对字符串进行倒序排列
+	5.练习自动拆箱和装箱
+	

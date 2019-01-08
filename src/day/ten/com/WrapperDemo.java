@@ -17,6 +17,22 @@ public class WrapperDemo {
 		Byte b = new Byte((byte)12);
 		System.out.println(Byte.MAX_VALUE);
 		System.out.println(Byte.MIN_VALUE);
+		
+		
+		Short s  = new Short((short)12);
+		Integer i  = new Integer(12);
+		
+		Long l  = new Long(12);
+		Boolean bool = new Boolean(true);
+		bool.booleanValue();
+		
+		long ll = 11L;
+		float f  = 12.2f;
+		
+		Integer.toHexString(100);//转换成16进制
+		
+		//字符串转换成整数
+		Integer i0 = Integer.parseInt("123");
 
 	}
 
