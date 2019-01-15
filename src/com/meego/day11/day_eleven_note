@@ -49,6 +49,7 @@ Map
 		与之前的JDK版本不同
 	6.put
 		放入元素
+		将key和value 进行关联,如果key已存在,则value被覆盖
 	7.get(Key)
 		提取元素
 	8.迭代
