@@ -47,6 +47,7 @@ Map
 	4.map的size 就是entry的数量
 	5.Map接口是单独的接口,没有继承任何接口
 		与之前的JDK版本不同
+		引用了COLLECTION的方法
 	6.put
 		放入元素
 		将key和value 进行关联,如果key已存在,则value被覆盖
@@ -57,4 +58,24 @@ Map
 		keySet
 	9.remove(key)
 		删除条目
+	10.HashMap.hash()方法意义
+		将新hash值跟更多的特征值相关
+		异或运算 可以使hash值更加的分散,或 大概率分布在大数值  与 运算大概率分散在小数值 
+		
+	11.Nonde<K,V>
+		class Node<K,V>{
+			int hash;	//新哈希
+			final k key ;//key不能修改
+			V value;
+			Node<K,V> next;
+	12.元素重复的判断标准
+		p.hash == hash && ((k = p.eky) == key || (key != null && key.equals(k)))
+			
+		
+		
+
+作业
+--------------------------------------------
+	1.hashMap种的hash算法的实现原理,阐述出来
+		移位 + ^(异或)运算
 	
