@@ -119,8 +119,188 @@ public class StringTestDemo {
         System.out.print("返回值 :" );
         System.out.println(Str1111.matches("www(.*)"));
         
+        //regionMatches() 方法用于检测两个字符串在一个区域内是否相等。
+        //第一个参数,ignoreCase -- 如果为 true，则比较字符时忽略大小写。默认为true
+        //toffset -- 此字符串中子区域的起始偏移量。   s1.regionMatched(true,a,s2,b,c)   a代表的是s1的起始位置
+        //b代表s2的起始位置,c 代表s2从b开始后的length
         
-	}
+        String Str11111 = new String("www.runoob.com");
+        String Str21 = new String("qqrunodddd");
+        String Str3 = new String("RUNOOB");
+        
+        
+        System.out.println(">>>>>>>>>>>>>>>>>regionMatches>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+        System.out.print("返回值 :" );
+        System.out.println(Str11111.regionMatches(4, Str21, 2, 4));
+
+        System.out.print("返回值 :" );
+        System.out.println(Str11111.regionMatches(4, Str3, 0, 5));
+
+        System.out.print("返回值 :" );
+        System.out.println(Str11111.regionMatches(true, 4, Str3, 0, 5));
+        
+        //replaceAll() 方法使用给定的参数 replacement 替换字符串所有匹配给定的正则表达式的子字符串。
+        //成功则返回替换的字符串，失败则返回原始字符串。
+        //replaceFirst() 方法使用给定的参数 replacement 替换字符串第一个匹配给定的正则表达式的子字符串。
+        //成功则返回替换的字符串，失败则返回原始字符串。
+        //s1.replaceAll(String regex, String replacement)
+        //直接用指定字符串去匹配,返回替换后的字符串
+        /**
+         * regex -- 匹配此字符串的正则表达式。
+
+         * newChar -- 用来替换每个匹配项的字符串。
+         */
+        System.out.println("---------------->replaceAll()----------------->");
+        
+        String a1 = "www.google.com";
+        String a2 = "meego";
+        
+        System.out.println(a1.replaceAll("(.*)google(.*)", a2));
+        System.out.println(a1.replaceAll("(.*)baidu(.*)", a2));
+        System.out.println(a1.replaceAll("www", a2));
+        
+        
+        String Str111111 = new String("hello runoob，I am from runoob。");
+        
+        
+        System.out.print("返回值 :" );
+        System.out.println(Str111111.replaceFirst("(.*)runoob(.*)", "google" ));	//返回替换后的字符
+        System.out.println(Str111111);
+        System.out.print("返回值 :" );
+        System.out.println(Str111111.replaceFirst("hello", "google" ));		//返回替换后的字符串
+        System.out.println(Str111111);
+        
+        //split() 方法根据匹配给定的正则表达式来拆分字符串。
+        //Tips  :    . 、 | 和 * 等转义字符，必须得加 \\。
+        //regex -- 正则表达式分隔符。
+
+        //limit -- 分割的份数。
+        
+        String str = new String("Welcome-to-Runoob");
+        
+        System.out.println("- 分隔符返回值 :" );
+        for (String retval: str.split("-")){
+            System.out.println(retval);
+        }
+ 
+        System.out.println("");
+        System.out.println("- 分隔符设置分割份数返回值 :" );
+        for (String retval: str.split("-", 2)){
+            System.out.println(retval);
+        }
+ 
+        System.out.println("");
+        String str21 = new String("www.runoob.com");
+        System.out.println("转义字符返回值 :" );
+        for (String retval: str21.split("\\.", 3)){
+            System.out.println(retval);
+        }
+ 
+        System.out.println("");
+        String str31 = new String("acount=? and uu =? or n=?");
+        System.out.println("多个分隔符返回值 :" );
+        for (String retval: str31.split("and|or")){
+            System.out.println(retval);
+        }
+        
+        
+        //startsWith() 方法用于检测字符串是否以指定的前缀开始。
+        //prefix -- 前缀。
+
+        //toffset -- 字符串中开始查找的位置。
+        //如果字符串以指定的前缀开始，则返回 true；否则返回 false。
+        String Str221 = new String("www.runoob.com");
+        
+        System.out.print("返回值 :" );
+        System.out.println(Str221.startsWith("www") );
+ 
+        System.out.print("返回值 :" );
+        System.out.println(Str221.startsWith("runoob") );
+ 
+        System.out.print("返回值 :" );
+        System.out.println(Str221.startsWith("runoob", 4) );
+        
+        
+        //subSequence() 方法返回一个新的字符序列，它是此序列的一个子序列。
+        //substring() 方法返回字符串的子字符串。
+        /**返回类型不一样，subString返回的是String，subSequence返回的是实现了CharSequence接口的类，
+         *也就是说使用subSequence得到的结果，只能使用CharSequence接口中的方法。不过在String类中已经重写了subSequence，
+         * 调用subSequence方法，可以直接下转为String对象。
+        */
+        //返回一个新的字符序列，它是此序列的一个子序列。
+        String Str2221 = new String("www.runoob.com");
+
+        System.out.print("返回值 :" );
+        System.out.println(Str2221.subSequence(4, 10) );
+        
+        
+        //toCharArray() 方法将字符串转换为字符数组。
+        String Str1111111 = new String("www.runoob.com");
+
+        System.out.print("返回值 :" );
+        System.out.println( Str1111111.toCharArray() );
+        for(char i : Str1111111.toCharArray()) {
+        	System.out.println(i);
+        }
+        
+        //toLowerCase() 方法将字符串转换为小写。
+        //toUpperCase() 方法将字符串小写字符转换为大写。
+        
+        String Str11111111 = new String("WWW.RUNOOB.COM");
+
+        System.out.print("返回值 :" );
+        System.out.println( Str11111111.toLowerCase());
+        System.out.println(Str11111111.toLowerCase().toUpperCase());
+        
+        //toString() 方法返回此对象本身（它已经是一个字符串）。
+        
+        //trim() 方法用于删除字符串的头尾空白符。
+        String Str111111111 = new String("    www.runoob.com    ");
+        System.out.print("原始值 :" );
+        System.out.println( Str111111111 );
+
+        System.out.print("删除头尾空白 :" );
+        System.out.println( Str111111111.trim() );
+    
+        
+        
+       /**
+        * valueOf(boolean b): 返回 boolean 参数的字符串表示形式。.
+
+        *valueOf(char c): 返回 char 参数的字符串表示形式。
+
+        *valueOf(char[] data): 返回 char 数组参数的字符串表示形式。
+
+        *valueOf(char[] data, int offset, int count): 返回 char 数组参数的特定子数组的字符串表示形式。
+
+        *valueOf(double d): 返回 double 参数的字符串表示形式。
+
+        *valueOf(float f): 返回 float 参数的字符串表示形式。
+
+        *valueOf(int i): 返回 int 参数的字符串表示形式。
+
+        *valueOf(long l): 返回 long 参数的字符串表示形式。
+
+        *valueOf(Object obj): 返回 Object 参数的字符串表示形式 
+        */
+        double d = 1100.00;
+        boolean b = true;
+        long l = 1234567890;
+        char[] arr = {'r', 'u', 'n', 'o', 'o', 'b' };
+
+        System.out.println("返回值 : " + String.valueOf(d) );
+        System.out.println("返回值 : " + String.valueOf(b) );
+        System.out.println("返回值 : " + String.valueOf(l) );
+        System.out.println("返回值 : " + String.valueOf(arr) );
+
+        
+        
+        
+        
+        
+        
+        
 	
+	}     
 }
 
