@@ -9,6 +9,7 @@ package com.meego.cainiao;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Enumeration;
+import java.util.List;
 import java.util.Vector;
 
 public class VectorTestDemo {
@@ -109,6 +110,240 @@ public class VectorTestDemo {
 	      v.ensureCapacity(50);
 	      System.out.println(v.capacity());
 	      
+	      //boolean equals(Object o) 
+	      //比较指定对象与此向量的相等性。
+	      Object v11 = v.clone(); 
+	      System.out.println(v.equals(v1));
+	      
+	      //Object firstElement() 
+	      //返回此向量的第一个组件（位于索引 0) 处的项）。
+	      System.out.println(v.firstElement());
+	      
+	      
+	      //Object get(int index) 
+	      //返回向量中指定位置的元素。
+	      System.out.println(v.get(4));
+	      
+	      //int hashCode() 
+	      //返回此向量的哈希码值。
+	      System.out.println(v.hashCode());
+	      System.out.println(v1.hashCode());
+	      System.out.println(v11.hashCode());
+	      
+	      //int indexOf(Object elem) 
+	      //返回此向量中第一次出现的指定元素的索引，如果此向量不包含该元素，则返回 -1。
+	      
+	      System.out.println(v.indexOf(9999));
+	      
+	      //int indexOf(Object elem, int index) 
+	      //返回此向量中第一次出现的指定元素的索引，从 index 处正向搜索，如果未找到该元素，则返回 -1。
+	      v.add(9999);
+	      System.out.println(v.indexOf(9999,7));
+	      
+	      //void insertElementAt(Object obj, int index) 
+	      //将指定对象作为此向量中的组件插入到指定的 index 处。
+	      v.insertElementAt(9999, 6);
+	      System.out.println(v);
+	      
+	      //boolean isEmpty() 
+	      //测试此向量是否不包含组件。
+	      Vector<Number> v2 = new Vector<Number>(3,2); ;
+	      System.out.println(v.isEmpty() + "--->v2" + v2.isEmpty());
+	      
+	      
+	      //Object lastElement() 
+	      //返回此向量的最后一个组件。
+	      System.out.println("Object lastElement() 返回此向量的最后一个组件。");
+	      System.out.println(v.lastElement());
+	      
+	      
+	      //int lastIndexOf(Object elem) 
+	      //返回此向量中最后一次出现的指定元素的索引；如果此向量不包含该元素，则返回 -1。
+	      System.out.println("返回此向量中最后一次出现的指定元素的索引；如果此向量不包含该元素，则返回 -1。");
+	      System.out.println(v.lastIndexOf(9999));
+	      System.out.println(v.lastIndexOf(7777));
+	      
+	      //	Object remove(int index) 
+	      //移除此向量中指定位置的元素。
+	      System.out.println("移除此向量中指定位置的元素。");
+	      v2.add(1);
+	      v2.add(2);
+	      v2.add(2);
+	      v2.add(4);
+	      v2.add(55);
+	      v2.add(771);
+	      v2.add(9999);
+	      v2.add(7777);
+	      System.out.println(v2.remove(0));
+	      
+	      
+	      
+	      //boolean remove(Object o) 
+	      //移除此向量中指定元素的第一个匹配项，如果向量不包含该元素，则元素保持不变。
+	      System.out.println("移除此向量中指定元素的第一个匹配项，如果向量不包含该元素，则元素保持不变。");
+	      System.out.println(v2);
+	      System.out.println(v11);
+	      System.out.println(v2.remove(v11));
+	      System.out.println(v2);
+	      
+	      
+	      
+	      //	boolean removeAll(Collection c) 
+	      //从此向量中移除包含在指定 Collection 中的所有元素。
+	      System.out.println("从此向量中移除包含在指定 Collection 中的所有元素。");
+	      System.out.println(v2.removeAll((Collection<?>) v11));
+	      System.out.println((Collection<?>) v11);
+	      System.out.println(v2);
+	      
+	      
+	      
+	      //	boolean removeElement(Object obj) 
+	      //从此向量中移除变量的第一个（索引最小的）匹配项。
+	      System.out.println("从此向量中移除变量的第一个（索引最小的）匹配项。");
+	      System.out.println(v2.removeAll((Collection<?>) v11));
+	      
+	      
+	      //void removeElementAt(int index) 
+	      //删除指定索引处的组件。
+	      System.out.println("删除指定索引处的组件。");
+	      v2.removeElementAt(2);
+	      System.out.println(v2);
+	      
+	      
+	      
+	      
+	      //	protected void removeRange(int fromIndex, int toIndex)
+	      //从此 List 中移除其索引位于 fromIndex（包括）与 toIndex（不包括）之间的所有元素。
+	      System.out.println("从此 List 中移除其索引位于 fromIndex（包括）与 toIndex（不包括）之间的所有元素。");
+	      System.out.println(v);
+	      //v2.removeRange(0,3);
+	      System.out.println(v);
+	      
+	      
+	      
+	      
+	      //boolean retainAll(Collection c) 
+	      //在此向量中仅保留包含在指定 Collection 中的元素。
+	      System.out.println("在此向量中仅保留包含在指定 Collection 中的元素。");
+	      v2.add(1);
+	      v2.add(2);
+	      v2.add(2);
+	      v2.add(4);
+	      v2.add(55);
+	      v2.add(771);
+	      v2.add(9999);
+	      v2.add(7777);
+	      System.out.println(v2);
+	      v2.retainAll((Collection<?>) v11);
+	      System.out.println(v2);
+	      
+	      
+	      
+	      //Object set(int index, Object element)
+	      //用指定的元素替换此向量中指定位置处的元素。返回的是被替换位置的元素
+	      System.out.println("用指定的元素替换此向量中指定位置处的元素。");
+	      System.out.println(v);
+	      System.out.println(v.set(2,777777));
+	      System.out.println(v);
+	      
+	      
+	      
+	      
+	      //void setElementAt(Object obj, int index) 
+	      //将此向量指定 index 处的组件设置为指定的对象。
+	      System.out.println("将此向量指定 index 处的组件设置为指定的对象。");
+	      v.setElementAt(27777, 1);
+	      System.out.println(v);
+	      
+	      
+	      
+	      
+	      
+	      //void setSize(int newSize) 
+	      //设置此向量的大小。
+	      System.out.println("设置此向量的大小。");
+	      System.out.println(v.size());
+	      v.setSize(23);
+	      System.out.println(v.size());
+	      System.out.println(v.capacity());
+	      
+	      
+	      
+	      
+	      
+	      //int size() 
+	      //返回此向量中的组件数。
+	      
+	      
+	      
+	      
+	      
+	      
+	      
+	      
+	      //List subList(int fromIndex, int toIndex) 
+	      //返回此 List 的部分视图，元素范围为从 fromIndex（包括）到 toIndex（不包括）。
+	      System.out.println("返回此 List 的部分视图，元素范围为从 fromIndex（包括）到 toIndex（不包括）。");
+	      ArrayList<Number> arr1 = new ArrayList<Number>();
+//	      arr1 = (ArrayList<Number>) v.subList(0, 4);
+//	      System.out.println(arr1);
+	      
+	      
+	      
+	      
+	      
+	      
+	      
+	      
+	      
+	      
+	      
+	      
+	      
+	      
+	      //Object[] toArray()
+	      //返回一个数组，包含此向量中以恰当顺序存放的所有元素。
+	      System.out.println("返回一个数组，包含此向量中以恰当顺序存放的所有元素。");
+	      System.out.println(v);
+	      System.out.println(v.toArray());
+	      for(Object i : v.toArray()) {
+	    	  System.out.println(i);
+	      }
+	      
+	      
+	      
+	      
+	      
+	      
+	      
+	      
+	      
+	      
+	      //Object[] toArray(Object[] a) 
+	      //返回一个数组，包含此向量中以恰当顺序存放的所有元素；返回数组的运行时类型为指定数组的类型。
+	      
+	      
+	      
+	      
+	      
+	      
+	      
+	      
+	      
+	      //String toString() 
+	      //返回此向量的字符串表示形式，其中包含每个元素的 String 表示形式。
+	      
+	      
+	      
+	      
+	      //void trimToSize() 
+	      //对此向量的容量进行微调，使其等于向量的当前大小。等同于消除空白
+	      System.out.println("void trimToSize() 对此向量的容量进行微调，使其等于向量的当前大小。");
+	      System.out.println("v的size大小" + v.size());
+	      System.out.println("v的cap容量大小"+ v.capacity());
+	      v.trimToSize();
+	      System.out.println("v的size大小" + v.size());
+	      System.out.println("v的cap容量大小"+ v.capacity());
 	      
 	      
 	      
