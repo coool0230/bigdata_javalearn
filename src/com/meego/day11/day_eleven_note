@@ -70,6 +70,19 @@ Map
 			Node<K,V> next;
 	12.元素重复的判断标准
 		p.hash == hash && ((k = p.eky) == key || (key != null && key.equals(k)))
+		
+	13.new hash
+		p.hash == hash && ((k = p.eky) == key || (key != null && key.equals(k)))
+			a.new hash 不同,对象不同
+			b.new hash相同,对象是同一对象,则对象相同
+			c.new hash相同,对象不是同一对象,再判断equals方法,如果equals相同,则对象相同
+			hashcode:
+				采用按位运算
+
+java.lang.Object
+--------------------------------------
+	
+			
 			
 		
 		
@@ -78,4 +91,31 @@ Map
 --------------------------------------------
 	1.hashMap种的hash算法的实现原理,阐述出来
 		移位 + ^(异或)运算
+		int hashcode = o.hashCode()
+		int a = hashcode >>> 16
+		int newhash = a ^ hashcode
+		
+	2.创建一个类Student
+		有int height,int weight,int age,重写equals和hashcode
+		equals方法实现原则:三个属性都相同,即为对象相同.
+		hashcode
+		
+	3.使用Map集合实现集合嵌套
+		Map:key(String) -value对
+		
+		//名单集合(一个班)
+		//key :学号 No100 Value:tom-xxx
+		Map<String,String> names = ....
+		
+		//班级集合(一个年级)
+		Map<String,Map<String,String>> classes ...
+		
+		//年级集合
+		Map<String,Map<String,Map<String,String>>> grades = ...
+		
+		
+
+ArrayList
+HashSet
+LinkedList
 	
