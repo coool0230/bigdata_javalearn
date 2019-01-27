@@ -12,7 +12,7 @@ public class TaskDay11_2 {
 		Map<String,HashMap<String,HashMap<Integer,String>>> grades = new HashMap<String,HashMap<String,HashMap<Integer,String>>>();
 		for(int i =1;i <= 6;i++) {
 			grades.put(i+"年级",classes);
-			for(int j = 1;j <= 2;j ++) {
+			for(int j = 1;j <= 5;j ++) {
 				grades.get(i+ "年级").put(j + "班", persons);
 				for(int k = 1;k <= 30;k ++) {
 					grades.get(i+ "年级").get(j + "班").put( k, "号");
