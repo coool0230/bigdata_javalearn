@@ -1,4 +1,0 @@
-I am meego
-I'm learning 
-file operation
-我正在学习文件操作
