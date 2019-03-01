@@ -42,12 +42,14 @@ public class StackOfAchieveDemo {
 		soad.push(30);
 		soad.push(40);
 		soad.push(50);
+		System.out.println(soad.top);
 		while(!soad.isEmpty()) {
 	         long value = soad.pop();
 	         System.out.print(value);
-	         System.out.print(" ");
+	         System.out.println(soad.top);
 		}
-		System.out.println("");
+		System.out.println(soad);
+		System.out.println("1111111111");
 	}
 
 }
